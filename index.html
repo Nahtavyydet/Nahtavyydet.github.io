@@ -1,42 +1,28 @@
 <!DOCTYPE html>
-<html lang=en-US>
-<head>
-<title> Suomi </title>
-<style> 
-.column {
-    float: left;
-    width: 50%;
-}
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-#headerPopup{
-  width:75%;
-  margin:0 auto;
-}
-#headerPopup iframe{
-  width:100%;
-  margin:0 auto;
-}
-    
-</style>
-<link rel="stylesheet" href="index.css">
-<link rel="icon" type="image/vnd.microsoft.icon"
-     href="kartta.ico" />
-</head>
-
-<img src="lippu.jpg" onclick="playSound()">
-
-<script language="javascript" type="text/javascript">
-function playSound(laulu.mp3) {
-document.getElementById("dummy").innerHTML= "<embed src=\""
-+soundfile+"\" hidden=\"true\" autostart=\"true\"
-loop=\"false\" />";
-}
-</script>
+<html>
+  <head>
+      <title> Suomi </title>
+      <script type="text/javascript">
+          function playSound(el,soundfile) {
+              var embed = document.getElementById("embed");
+              if (!embed) {
+                  var embed = document.createElement("embed");
+                      embed.id= "embed";
+                      embed.setAttribute("src", soundfile);
+                      embed.setAttribute("hidden", "true");
+                  el.appendChild(embed);
+              } else {
+                  embed.parentNode.removeChild(embed);
+              }
+          }
+      </script>
+  </head>
+<body>
+    <span id="dummy" onclick="playSound(this, 'https://dl.dropbox.com/u/39640025/MP3/Waves.mp3');">
+      <img src="lippu.jpg" name="Bottom-1" width="115" height="45" border="0" id="Bottom-1"/>
+    </span>
+</body>
+</html>
 
 </body>
 </html>
