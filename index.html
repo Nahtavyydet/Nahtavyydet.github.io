@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang=en-US>
 <head>
-<title> Nähtävyydet </title>
+<title> Suomi </title>
 <style> 
 .column {
     float: left;
@@ -27,23 +27,16 @@
 <link rel="icon" type="image/vnd.microsoft.icon"
      href="kartta.ico" />
 </head>
- 
-<body background="karttabg.png">
-    
-<div style="padding-left: 280px; padding-top: 280px; text-align:center;">
-<button onclick="myFunction()">Suomi</button>
 
-    
-<script type="text/javascript">
-    function myFunction() {
-      alert("Suomi");
-    }
+<img src="lippu.jpg" onclick="playSound()">Suomi</button>
+
+<script language="javascript" type="text/javascript">
+function playSound(laulu.mp3) {
+document.getElementById("dummy").innerHTML= "<embed src=\""
++soundfile+"\" hidden=\"true\" autostart=\"true\"
+loop=\"false\" />";
+}
 </script>
-    
-<div class="container">
-  <img src="karttabg.png" alt="Kart">
-  <button onclick="myFunction()" class="btn">Suomi</button>
-</div>
-    
+
 </body>
 </html>
